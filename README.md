@@ -49,62 +49,132 @@ Univariate feature selection is relatively simple and computationally efficient,
 
 ## Evaluation and Results
 
-** Supervised **
+**Supervised**
 
 #### Filter Based Methods
-** Mutual Information **
-![alt text](https://github.com/vasanthgx/house_prices/blob/main/images/hist1.png)
-** Chi Squared **
-![alt text](https://github.com/vasanthgx/house_prices/blob/main/images/hist1.png)
-** Pearson Correlation **
-![alt text](https://github.com/vasanthgx/house_prices/blob/main/images/hist1.png)
+**Mutual Information**
+![alt text](https://github.com/vasanthgx/feature_selection/blob/main/images/mi.png)
+Mutual information is a measure of the amount of information obtained about one random variable through the observation of another random variable. In the context of feature selection, mutual information is used to quantify the relationship between an input feature and the target variable.
 
+In feature selection, mutual information is utilized to assess the relevance of each feature to the target variable. Higher mutual information between a feature and the target implies that the feature provides more information about the target variable and thus is more likely to be useful for prediction or classification tasks.
 
+The mutual information between two variables, X and Y, can be calculated using various methods, such as entropy-based techniques. Essentially, it measures how much knowing the value of one variable reduces the uncertainty about the other variable.
+
+In the context of feature selection, features with high mutual information with the target variable are usually selected, as they are expected to contribute more to the predictive power of the model. Conversely, features with low mutual information may be discarded as they are less informative for predicting the target variable.
+
+![alt text](https://github.com/vasanthgx/feature_selection/blob/main/images/mi-bar-chart.png)
+
+Overall, mutual information serves as a useful tool in feature selection by quantifying the relevance of features to the target variable, thereby aiding in the construction of more effective and efficient predictive models.
+**Chi Squared**
+
+The chi-squared (χ²) method is a statistical test used for feature selection in machine learning and statistics. It measures the dependence between two variables, typically the input features and the target variable in a classification task.
+
+In feature selection, the chi-squared method assesses whether there is a significant association between each feature and the target variable. It is particularly useful when dealing with categorical variables.
+**Pearson Correlation**
+![alt text](https://github.com/vasanthgx/feature_selection/blob/main/images/pearson.png)
+Pearson correlation is a measure of the linear correlation between two continuous variables. In feature selection for machine learning, Pearson correlation can be used to assess the relationship between each feature and the target variable.By examining the Pearson correlation coefficients, you can identify features that are strongly correlated (either positively or negatively) with the target variable, aiding in feature selection for machine learning models.
+![alt text](https://github.com/vasanthgx/feature_selection/blob/main/images/heatmap.png)
+Here we can clearly see the positive correlation between AveBedrms and AveRooms and negative correlation between Latitude and Longitude features.
 #### Wrapper Based Methods
-** Recursive Feature Elimination ( R F E ) **
-![alt text](https://github.com/vasanthgx/house_prices/blob/main/images/corr2.png)
+**Recursive Feature Elimination ( R F E )**
 
-** Select From Model **
-![alt text](https://github.com/vasanthgx/house_prices/blob/main/images/hist1.png)
+Recursive Feature Elimination (RFE) is a feature selection technique commonly used in machine learning to select the most relevant features for a predictive model. It works by recursively removing the least important features until the specified number of features is reached or until a stopping criterion is met.
+Recursive Feature Elimination helps in feature selection by iteratively removing the least important features, allowing the model to focus on the most relevant features. It can be particularly useful in scenarios where the number of features is large relative to the number of samples, as it helps in reducing overfitting and improving model interpretability.
 
-** Sequential Feature Selection **
-![alt text](https://github.com/vasanthgx/house_prices/blob/main/images/hist1.png)
+**Select From Model**
+
+SelectFrom Model is a feature selection technique in machine learning provided by scikit-learn. It allows you to select the most important features based on the importance weights provided by a base estimator (model). This technique is particularly useful when the base estimator has an attribute that ranks the importance of features, such as decision trees or linear models.
+SelectFrom Model is a flexible and powerful feature selection technique that leverages the importance scores provided by a base estimator to select relevant features for your machine learning models.
+
+**Sequential Feature Selection**
+
+Sequential Feature Selection (SFS) is a type of feature selection method in machine learning where subsets of features are iteratively evaluated to find the best subset that maximizes the performance of the model. It sequentially adds or removes features from the feature set until a certain criterion is met.
+
+There are two main types of Sequential Feature Selection:
+
+**Forward Feature Selection:** In forward feature selection, the algorithm starts with an empty set of features and iteratively adds one feature at a time, selecting the one that improves the model's performance the most until a predefined criterion is met. This process continues until the desired number of features is reached or until further addition of features does not significantly improve the model's performance.
+
+**Backward Feature Selection:** In backward feature selection, the algorithm starts with the entire set of features and iteratively removes one feature at a time, selecting the one whose removal improves the model's performance the most until a predefined criterion is met. This process continues until the desired number of features is reached or until further removal of features does not significantly improve the model's performance.
+
+Sequential Feature Selection is typically performed using a performance metric such as accuracy, AUC, F1-score, or any other relevant metric for the specific task. The performance of the model is evaluated using cross-validation or another appropriate validation technique at each step of the feature selection process.
+
+One of the advantages of Sequential Feature Selection is that it can reduce the dimensionality of the feature space while maintaining or even improving the performance of the model. It can also help in improving the interpretability of the model by selecting the most relevant features.
+
+Scikit-learn provides an implementation of Sequential Feature Selection through the SequentialFeatureSelector class in the feature_selection module. This class supports both forward and backward feature selection strategies and can be used with any estimator that supports the fit and predict methods.
 
 #### Embedded Methods
-** Lasso Regularization **
-![alt text](https://github.com/vasanthgx/house_prices/blob/main/images/corr1.png)
+Embedded methods of feature selection in machine learning are techniques where feature selection is integrated into the process of training the model itself. In other words, feature selection is performed "on the fly" during the model training process. These methods automatically select the most relevant features as part of the model training process, rather than as a separate preprocessing step.
 
-** Random Forest **
-![alt text](https://github.com/vasanthgx/house_prices/blob/main/images/hist1.png)
+Embedded feature selection methods are particularly common in algorithms where feature selection naturally occurs during the model training process. Some common examples of algorithms that incorporate embedded feature selection include:
+
+**Lasso (L1 regularization):** Lasso regression adds a penalty term to the linear regression objective function, which forces some coefficients (and thus corresponding features) to be exactly zero. As a result, Lasso effectively performs feature selection by automatically setting less important features' coefficients to zero during training.
+
+**Elastic Net:** Elastic Net is a linear regression model that combines L1 (Lasso) and L2 (Ridge) regularization penalties. Like Lasso, Elastic Net can perform feature selection by setting less important features' coefficients to zero.
+
+**Tree-based algorithms (Random Forest, Gradient Boosting Machines):** Decision trees and ensemble methods based on decision trees (such as Random Forest and Gradient Boosting Machines) inherently perform feature selection during the training process. These algorithms select the most informative features at each split in the tree, thereby prioritizing the most relevant features in the final model.
+
+**Linear SVM with L1 Regularization:** Support Vector Machines (SVMs) with L1 regularization can perform feature selection similarly to Lasso regression. By adding an L1 penalty term to the SVM objective function, less important features' coefficients are encouraged to be zero, effectively performing feature selection during the model training process.
+
+**Neural Networks with Dropout:** Dropout is a regularization technique commonly used in neural networks. During training, random neurons (and thus corresponding features) are "dropped out" with a certain probability, effectively performing feature selection by ignoring less important features during training.
+
+Embedded feature selection methods offer the advantage of integrating feature selection directly into the model training process, potentially leading to more efficient and effective feature selection. However, the choice of algorithm and its hyperparameters can significantly impact the effectiveness of embedded feature selection, and it may not always provide the best feature subset for a given problem. Therefore, it's essential to experiment with different algorithms and parameter settings to find the best-performing model.
+
 
 
 ### UnSupervised
 
-** PCA **
-![alt text](https://github.com/vasanthgx/house_prices/blob/main/images/hist1.png)
+**PCA**
+
+Principal Component Analysis (PCA) is a widely used dimensionality reduction technique in machine learning and data analysis. It is primarily used for feature extraction and data visualization by reducing the dimensionality of the dataset while preserving most of the relevant information.
+
+PCA works by transforming the original high-dimensional data into a new coordinate system (i.e., new set of variables) called principal components. These principal components are linear combinations of the original features and are orthogonal to each other. The first principal component captures the maximum variance in the data, the second principal component captures the maximum remaining variance orthogonal to the first component, and so on.
+
+Here's how PCA works in more detail:
+
+**Standardization:** If the features in the dataset have different scales, it's essential to standardize them (subtract the mean and divide by the standard deviation) to ensure that each feature contributes equally to the PCA.
+
+**Covariance Matrix:** PCA computes the covariance matrix of the standardized data. The covariance matrix measures the pairwise covariances between the features, indicating how they vary together.
+
+**Eigenvalue Decomposition:** PCA then performs eigenvalue decomposition (or singular value decomposition) on the covariance matrix to obtain the eigenvectors and eigenvalues. Eigenvectors represent the directions (principal components) of maximum variance in the data, while eigenvalues represent the magnitude of variance along each eigenvector.
+
+**Selecting Principal Components:** The principal components are sorted in descending order of their corresponding eigenvalues. The top k eigenvectors (principal components) are selected to retain most of the variance in the data, where k is the desired number of dimensions in the reduced space.
+
+**Projection:** Finally, PCA projects the original data onto the selected principal components to obtain the lower-dimensional representation of the data.
+
+PCA is often used for:
+
+Dimensionality reduction: By selecting only the top principal components, PCA reduces the dimensionality of the dataset while retaining most of the variance. This can help in reducing computational complexity and alleviating the curse of dimensionality.
+
+Data visualization: PCA can be used to visualize high-dimensional data in lower-dimensional space (e.g., 2D or 3D), making it easier to explore and understand the structure of the data.
+
+Noise reduction: PCA can help in removing noise and redundant information from the dataset by focusing on the principal components that capture the most significant variations in the data.
+
+Overall, PCA is a powerful technique for reducing the dimensionality of data and extracting meaningful features for machine learning models. It is widely used across various domains, including image processing, signal processing, and natural language processing.
 
 
 
 ## Metrics of R-squared and Mean Squared error
 
-| Feature Selection Method| R2 Score | MSE |
-| -------------        | ------------- |------ |
-| Supervised - Filter Based Methods |           |       |   
-| Mutual Information   | xxx   | xxx  |
+| **Feature Selection Method**| R2 Score | MSE |
+| -------------        | :-------------: |:------: |
+| **Supervised - Filter Based Methods** |           |       |   
+| Mutual Information   | 0.57   | 0.52  |
 | Chi Squared   | xxx   | xxx  |
-| Pearson Correlation   | xxx   | xxx  |
-| Supervised - Wrapper Based Methods   |    |  |
-| Recursive Feature Elimination   | xxx   | xxx  |
+| Pearson Correlation - method 1(using the f_regression and SelectKBest class from sklearn)| 0.56 | 0.58  |
+| Pearson Correlation - method 2 (using the corr() function)   | 0.52  | .60 |
+| **Supervised - Wrapper Based Methods**   |    |  |
+| Recursive Feature Elimination   | 0.59   | 0.55 |
 | Select From Model | xxx   | xxx  |
-| Sequential Feature Selection  | xxx   | xxx  |
-| Supervised - Embedded Mehtods   |    |  |
-| Lasso Regularization  | xxx   | xxx  |
-| Random Forest   | xxx   | xxx  |
-| UnSupervised - Dimensionality Reduction   |    |   |
-| PCA   | xxx   | xxx  |
+| Sequential Feature Selection - forward selection method  | 0.54   | 0.61  |
+| Sequential Feature Selection - backward selection method  | 0.61   | 0.52  |
+| **Supervised - Embedded Mehtods**   |    |  |
+| Lasso Regularization  | .58   | .55  |
+
+| **UnSupervised - Dimensionality Reduction**   |    |   |
+| PCA   | .01  | 1.31 |
                  
 
-The above quant results show that we have an error of 54,000 USD betweeen the prediction and the actual house price.
+**The above quant results show that we have the best result with the backward selection method of the SequentialFeatureSelector, with a model using just 4 out of the 8 features.**
 
 ## Key Takeaways
 
@@ -204,7 +274,7 @@ This dataset has been used in various research studies, educational settings, an
 ## Acknowledgements
 
 
- - ![Hands on machine learning - by Geron](https://github.com/vasanthgx/house_prices/blob/main/images/bookcover.jpg)
+ - [pearson-correlation](https://articles.outlier.org/pearson-correlation-coefficient)
  - [github repo for handsonml-3](https://github.com/ageron/handson-ml3)
  - [EDA on the California housing dataset - kaggle notebook](https://www.kaggle.com/code/olanrewajurasheed/california-housing-dataset)
  
