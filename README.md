@@ -39,7 +39,7 @@ It can be downloaded/loaded using the sklearn.datasets.fetch_california_housing 
     - Longitude block group longitude
 - Target: Median house value for California districts, expressed in hundreds of thousands of dollars ($100,000)
 
-## What is univariate feature selection ?
+### What is univariate feature selection ?
 
 Univariate feature selection is a type of feature selection method that evaluates each feature individually based on univariate statistical tests. In this approach, features are considered independently of each other, and their relevance to the target variable is assessed one at a time.
 
@@ -51,7 +51,7 @@ Univariate feature selection is relatively simple and computationally efficient,
 
 **Supervised**
 
-#### Filter Based Methods
+### Filter Based Methods
 **Mutual Information**
 ![alt text](https://github.com/vasanthgx/feature_selection/blob/main/images/mi.png)
 Mutual information is a measure of the amount of information obtained about one random variable through the observation of another random variable. In the context of feature selection, mutual information is used to quantify the relationship between an input feature and the target variable.
@@ -80,7 +80,7 @@ Pearson correlation is a measure of the linear correlation between two continuou
 ![alt text](https://github.com/vasanthgx/feature_selection/blob/main/images/heatmap.png)
 
 Here we can clearly see the positive correlation between AveBedrms and AveRooms and negative correlation between Latitude and Longitude features.
-#### Wrapper Based Methods
+### Wrapper Based Methods
 
 **Recursive Feature Elimination ( R F E )**
 
@@ -108,7 +108,7 @@ One of the advantages of Sequential Feature Selection is that it can reduce the 
 
 Scikit-learn provides an implementation of Sequential Feature Selection through the SequentialFeatureSelector class in the feature_selection module. This class supports both forward and backward feature selection strategies and can be used with any estimator that supports the fit and predict methods.
 
-#### Embedded Methods
+### Embedded Methods
 Embedded methods of feature selection in machine learning are techniques where feature selection is integrated into the process of training the model itself. In other words, feature selection is performed "on the fly" during the model training process. These methods automatically select the most relevant features as part of the model training process, rather than as a separate preprocessing step.
 
 Embedded feature selection methods are particularly common in algorithms where feature selection naturally occurs during the model training process. Some common examples of algorithms that incorporate embedded feature selection include:
@@ -225,7 +225,7 @@ The next steps would be
 
 ## FAQ
 
-#### What is Feature Selection  and its relevance ?
+### What is Feature Selection  and its relevance ?
 
 Feature selection in machine learning refers to the process of selecting a subset of relevant features or variables from a larger set of features to use in model training. Features are the individual measurable properties or characteristics of the data that are used to make predictions or decisions.
 
@@ -247,7 +247,7 @@ Feature selection methods can be broadly categorized into three main types:
 
 The choice of feature selection method depends on factors such as the size and nature of the dataset, the computational resources available, and the specific goals of the machine learning project.
 
-#### How do we finally select the best set of features after the feature selection process ?
+### How do we finally select the best set of features after the feature selection process ?
 
 Selecting the best features from different feature selection methods involves a combination of experimentation, evaluation, and domain expertise. Here's a general process for selecting the best features:
 
