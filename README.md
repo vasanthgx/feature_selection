@@ -65,17 +65,23 @@ In the context of feature selection, features with high mutual information with 
 ![alt text](https://github.com/vasanthgx/feature_selection/blob/main/images/mi-bar-chart.png)
 
 Overall, mutual information serves as a useful tool in feature selection by quantifying the relevance of features to the target variable, thereby aiding in the construction of more effective and efficient predictive models.
+
 **Chi Squared**
 
 The chi-squared (χ²) method is a statistical test used for feature selection in machine learning and statistics. It measures the dependence between two variables, typically the input features and the target variable in a classification task.
 
 In feature selection, the chi-squared method assesses whether there is a significant association between each feature and the target variable. It is particularly useful when dealing with categorical variables.
+
 **Pearson Correlation**
+
 ![alt text](https://github.com/vasanthgx/feature_selection/blob/main/images/pearson.png)
+
 Pearson correlation is a measure of the linear correlation between two continuous variables. In feature selection for machine learning, Pearson correlation can be used to assess the relationship between each feature and the target variable.By examining the Pearson correlation coefficients, you can identify features that are strongly correlated (either positively or negatively) with the target variable, aiding in feature selection for machine learning models.
 ![alt text](https://github.com/vasanthgx/feature_selection/blob/main/images/heatmap.png)
+
 Here we can clearly see the positive correlation between AveBedrms and AveRooms and negative correlation between Latitude and Longitude features.
 #### Wrapper Based Methods
+
 **Recursive Feature Elimination ( R F E )**
 
 Recursive Feature Elimination (RFE) is a feature selection technique commonly used in machine learning to select the most relevant features for a predictive model. It works by recursively removing the least important features until the specified number of features is reached or until a stopping criterion is met.
@@ -169,7 +175,6 @@ Overall, PCA is a powerful technique for reducing the dimensionality of data and
 | Sequential Feature Selection - backward selection method  | 0.61   | 0.52  |
 | **Supervised - Embedded Mehtods**   |    |  |
 | Lasso Regularization  | .58   | .55  |
-
 | **UnSupervised - Dimensionality Reduction**   |    |   |
 | PCA   | .01  | 1.31 |
                  
@@ -226,19 +231,19 @@ Feature selection in machine learning refers to the process of selecting a subse
 
 Feature selection is important for several reasons:
 
-** Curse of dimensionality: ** When dealing with high-dimensional data, having too many features can lead to overfitting and increased computational complexity. Feature selection helps to mitigate this issue by reducing the number of dimensions in the data.
+**Curse of dimensionality:** When dealing with high-dimensional data, having too many features can lead to overfitting and increased computational complexity. Feature selection helps to mitigate this issue by reducing the number of dimensions in the data.
 
-** Improving model performance: ** By selecting only the most relevant features, we can potentially improve the performance of our machine learning models. Irrelevant or redundant features can introduce noise into the model and decrease its predictive accuracy.
+**Improving model performance:** By selecting only the most relevant features, we can potentially improve the performance of our machine learning models. Irrelevant or redundant features can introduce noise into the model and decrease its predictive accuracy.
 
-** Interpretability: **  Models built with a smaller set of features are often easier to interpret and understand, both for practitioners and stakeholders. This is especially important in domains where interpretability is crucial, such as healthcare or finance.
+**Interpretability:**  Models built with a smaller set of features are often easier to interpret and understand, both for practitioners and stakeholders. This is especially important in domains where interpretability is crucial, such as healthcare or finance.
 
 Feature selection methods can be broadly categorized into three main types:
 
-** Filter methods:** These methods evaluate the relevance of features based on statistical properties such as correlation, mutual information, or significance tests. Features are selected independently of the machine learning algorithm used.
+**Filter methods:** These methods evaluate the relevance of features based on statistical properties such as correlation, mutual information, or significance tests. Features are selected independently of the machine learning algorithm used.
 
-** Wrapper methods: ** Wrapper methods involve training multiple models with different subsets of features and selecting the subset that produces the best performance according to a chosen evaluation metric. This approach is computationally expensive but can lead to better feature subsets.
+**Wrapper methods:** Wrapper methods involve training multiple models with different subsets of features and selecting the subset that produces the best performance according to a chosen evaluation metric. This approach is computationally expensive but can lead to better feature subsets.
 
-** Embedded methods: ** Embedded methods incorporate feature selection directly into the model training process. Some machine learning algorithms, such as decision trees or LASSO regression, inherently perform feature selection as part of their training process.
+**Embedded methods:** Embedded methods incorporate feature selection directly into the model training process. Some machine learning algorithms, such as decision trees or LASSO regression, inherently perform feature selection as part of their training process.
 
 The choice of feature selection method depends on factors such as the size and nature of the dataset, the computational resources available, and the specific goals of the machine learning project.
 
