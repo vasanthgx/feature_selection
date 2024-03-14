@@ -1,4 +1,5 @@
 # feature_selection
+<img src = "https://designerapp.officeapps.live.com/designerapp/Media.ashx/?id=7be0e4ac-eabd-4d5f-8345-36f3016b2e1d.gif&fileToken=4b5a2bc0-68a9-43f7-a1c5-954eb13ac53a&dcHint=KoreaCentral"/>
 <img src="https://github.com/vasanthgx/feature_selection/blob/main/images/Design.gif" width="300" align='center'>
  Trying out the different feature selection methods on the California housing dataset
  
@@ -7,7 +8,7 @@
  <img src="https://github.com/vasanthgx/feature_selection/blob/main/images/resizedlogo2.png" width="300" align='center'>
  
 <img src="https://github.com/Anmol-Baranwal/Cool-GIFs-For-GitHub/assets/74038190/b3fef2db-e671-4610-bb84-1d65533dc5fb" width="300" align='center'>
-
+<img src = "https://designerapp.officeapps.live.com/designerapp/Media.ashx/?id=7be0e4ac-eabd-4d5f-8345-36f3016b2e1d.gif&fileToken=4b5a2bc0-68a9-43f7-a1c5-954eb13ac53a&dcHint=KoreaCentral"/>
 <br><br>
 
 # Project Title
