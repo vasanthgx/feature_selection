@@ -23,7 +23,7 @@
 
 # Project Title
 
-Exploring the different Feature Selection Methods on the California Housing Dataset.
+**Exploring the different Feature Selection Methods on the California Housing Dataset.**
 
 
 ## Implementation Details
