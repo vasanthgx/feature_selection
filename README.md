@@ -1,4 +1,5 @@
 ![logo](https://github.com/vasanthgx/feature_selection/blob/main/images/resizedlogo1.png)
+
 # Feature Selection In Machine Learning
 <!--
 
@@ -181,22 +182,23 @@ Overall, PCA is a powerful technique for reducing the dimensionality of data and
 | **Feature Selection Method**| R2 Score | MSE |
 | -------------        | :-------------: |:------: |
 | **Supervised - Filter Based Methods** |           |       |   
-| Mutual Information   | 0.57   | 0.52  |
+| Mutual Information   | 0.59   | 0.54  |
 | Chi Squared   | xxx   | xxx  |
 | Pearson Correlation - method 1(using the f_regression and SelectKBest class from sklearn)| 0.56 | 0.58  |
-| Pearson Correlation - method 2 (using the corr() function)   | 0.52  | .60 |
+| Pearson Correlation - method 2 (using the corr() function)   | 0.56  | .58 |
 | **Supervised - Wrapper Based Methods**   |    |  |
-| Recursive Feature Elimination   | 0.59   | 0.55 |
+| Recursive Feature Elimination   | 0.60   | 0.53 |
 | Select From Model | xxx   | xxx  |
-| Sequential Feature Selection - forward selection method  | 0.54   | 0.61  |
-| Sequential Feature Selection - backward selection method  | 0.61   | 0.52  |
+| Sequential Feature Selection - forward selection method  | 0.56   | 0.59  |
+| Sequential Feature Selection - backward selection method  | 0.60   | 0.53  |
 | **Supervised - Embedded Mehtods**   |    |  |
-| Lasso Regularization  | .58   | .55  |
+| Lasso Regularization  | .56   | .59  |
+| **Random Forest**  | **.75**   | **.33**  |
 | **UnSupervised - Dimensionality Reduction**   |    |   |
 | PCA   | .01  | 1.31 |
                  
 
-**The above quant results show that we have the best result with the backward selection method of the SequentialFeatureSelector, with a model using just 4 out of the 8 features.**
+**The above quant results show that we have the best result with the Random Forest of the embedded method**
 
 ## Key Takeaways
 
